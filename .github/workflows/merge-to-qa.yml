@@ -1,9 +1,9 @@
 name: Merge Staging to QA
 
 on:
-  push:
-    branches:
-      - staging
+  pull_request:
+    types:
+      - closed
 
 jobs:
   merge_to_qa:
@@ -19,8 +19,8 @@ jobs:
         run: |
           git config user.name "thawzinmyo"
           git config user.email "thawzinmyo@yomafleet.com"
+          git fetch origin qa:qa # Fetch the remote qa branch
           git checkout qa
-          git pull origin qa
           git merge staging
           git push origin qa
 
