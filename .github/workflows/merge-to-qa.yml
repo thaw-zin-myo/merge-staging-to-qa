@@ -13,7 +13,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Merge Staging to Feature/QA
+      - name: Merge Staging to QA
         if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'staging'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
