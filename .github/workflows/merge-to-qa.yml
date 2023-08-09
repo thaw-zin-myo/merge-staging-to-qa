@@ -21,7 +21,7 @@ jobs:
           git config user.email "thawzinmyo@yomafleet.com"
           git fetch origin qa:qa # Fetch the remote qa branch
           git checkout qa
-          git merge staging --allow-unrelated-histories
+          git merge --ff-only staging # Merge the staging branch without creating a merge commit
           git push origin qa
 
 
