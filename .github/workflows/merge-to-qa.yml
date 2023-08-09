@@ -15,7 +15,7 @@ jobs:
 
       - name: Merge Staging to QA
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MERGE_TOKEN }}
         run: |
           git config user.name "thawzinmyo"
           git config user.email "thawzinmyo@yomafleet.com"
