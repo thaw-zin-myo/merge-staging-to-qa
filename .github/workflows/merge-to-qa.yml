@@ -19,9 +19,8 @@ jobs:
         run: |
           git config user.name "thawzinmyo"
           git config user.email "thawzinmyo@yomafleet.com"
-          git fetch origin qa:qa # Fetch the remote qa branch
           git checkout qa
-          git merge --ff-only staging # Merge the staging branch without creating a merge commit
+          git pull origin staging
           git push origin qa
 
 
